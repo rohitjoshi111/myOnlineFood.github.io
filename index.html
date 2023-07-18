@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <title>Food project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #navbar {
+            display: flex;
+            align-items: center;
+            position: relative;
+            /*sb kuch set ho jayega automatically width fixed opecity and so on*/
+        
+        }
+        
+        #logo {
+            margin: 8px 8px;
+        }
+        
+        #logo img {
+            margin: 3px 6px;
+            height: 13vh;
+        }
+        
+        #navbar ul {
+            display: flex;
+            font-family: 'Baloo Bhai', cursive;
+        
+        }
+        
+        /*before and after sceodo selectors*/
+        
+        
+        
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            /*content dikhne lag jayega*/
+            opacity: .4;
+            top: 0;
+            left: 0;
+            /*color thod fika ho jayega size ke according*/
+        
+        }
+        
+        #navbar ul li {
+            list-style: none;
+            font-size: medium;
+        
+        }
+        
+        #navbar ul li a {
+            color: white;
+            display: block;
+            padding: 32px;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+        
+        #navbar ul li a:hover {
+            color: black;
+            background-color: white;
+        }
+        
+        /*Home section*/
+        #home {
+            display: flex;
+            flex-direction: column;
+            padding: 5px 199px;
+            justify-content: center;
+            align-items: center;
+            height: 570px;
+        }
+        
+        #home::before {
+            content: "";
+            background-image: url("img/123.jpg");
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            opacity: 0.9;
+            top: 0;
+            left: 0;
+        }
+        
+        #home h1 {
+            color: antiquewhite;
+            text-align: center;
+            font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        #home p {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: bisque;
+        }
+        
+        /*utility classes*/
+        .primary {
+            font-size: 2.5rem;
+            padding: 12px;
+        
+        
+        }
+        
+        .btn {
+            margin: 22px auto;
+            padding: 6px 24px;
+            border: 2px solid black;
+            background-color: chocolate;
+            color: white;
+            font-size: .9rem;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        
+        .center {
+            text-align: center;
+        
+        }
+        
+        /*services section*/
+        #services {
+            margin: auto;
+            display: flex;
+        
+        }
+        
+        #services .box {
+            border: 2px solid rgb(173, 160, 160);
+            margin: 4px;
+            border: 2px solid black;
+            border-radius: 14px;
+            background-color: rgb(237, 229, 229);
+        
+        
+        }
+        
+        #services .box img {
+            height: 160px;
+            display: block;
+            /*margin:auto tab kam krga jab display block hogi*/
+            margin: auto;
+            padding-top: 23px;
+            padding-bottom: 11px;
+        
+        
+        }
+        
+        #services .box p {
+            font-family: cursive;
+        }
+        
+        #services .box h2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        /*Client section*/
+        #client-section {
+            height: 355px;
+        }
+        
+        
+        #clients {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #clients img {
+            height: 96px;
+        }
+        
+        .client-item {
+            padding: 40px;
+        }
+        
+        #client-section h1 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2.8rem;
+            padding: 12px 34px;
+        }
+        
+        .primary1 {
+            font-size: 3.1rem;
+            padding-top: 3px;
+            padding-bottom: 6px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .secondary1 {
+            font-size: 2.1rem;
+            padding: 12px;
+            font-family: 'Bree Serif', serif;
+        }
+        
+        /*contact section*/
+        
+        #contact {
+            position: relative;
+            font-size: 23px;
+        }
+        
+        #contact::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            background: url("img/contact.jpg") no-repeat center center/cover;
+        
+        }
+        
+        #contact-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 34px;
+            margin: 22px;
+        }
+        
+        
+        
+        #contact-box textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 9px;
+            font-size: 1rem;
+            border-radius: 9px;
+        
+        
+        }
+        
+        #contact-box form{
+            width: 50%;
+        
+        }
+        #contact-box label{
+            font-size: 1.3rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        
+        }
+        
+        footer {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="img/foodlogo.png" alt="myonlinefood.com">
+
+        </div>
+        <ul>
+            <li class="item"><a href="#">Home</a></li>
+            <li class="item"><a href="#">Services</a></li>
+            <li class="item"><a href="#">About us </a></li>
+            <li class="item"><a href="#">Contact Us</a></li>
+            <li class="item"><a href="#">Feedback</a></li>
+
+
+        </ul>
+    </nav>
+
+    <section id="home">
+        <h1 class="primary">Welcome to MyOnlineFood</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio vel modi, non ipsum soluta a</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+        <button class="btn">Order now</button>
+    </section>
+
+    <section class="services-container">
+        <h1 class="primary1 center">Our Services</h1>
+        <div id="services">
+            <div class="box">
+                <img src="img/food2.jpg" alt="">
+                <h2 class="secondary1 center">Food Ordering</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur commodi suscipit
+                    adipisci. Voluptas
+                    laboriosam </p>
+            </div>
+            <div class="box">
+                <img src="img/cartring.jpg" alt="">
+                <h2 class="secondary1 center">Food Catering</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur commodi suscipit
+                    adipisci. Voluptas
+                    laboriosam </p>
+            </div>
+            <div class="box">
+                <img src="img/bulk.jpg" alt="">
+                <h2 class="secondary1 center">Bulk ordering</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur commodi suscipit
+                    adipisci. Voluptas
+                    laboriosam </p>
+            </div>
+            <div class="box">
+                <img src="img/trasitional.jpg" alt="">
+                <h2 class="secondary1 center">Food Traditonal</h2>
+                <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur commodi suscipit
+                    adipisci. Voluptas
+                    laboriosam </p>
+            </div>
+
+        </div>
+    </section>
+    <section id="client-section">
+        <h1 class="primary3 center">Our Clients</h1>
+        <div id="clients">
+            <div class="client-item">
+                <img src="img/logo1.png" alt="">
+            </div>
+
+            <div id="clients">
+                <div class="client-item">
+                    <img src="img/logo2.jpg" alt="">
+                </div>
+
+                <div id="clients">
+                    <div class="client-item">
+                        <img src="img/logo3.jpg" alt="">
+                    </div>
+
+                    <div id="clients">
+                        <div class="client-item">
+                            <img src="img/logo4.jpg" alt="">
+                        </div>
+
+                        <div id="clients">
+                            <div class="client-item">
+                                <img src="img/instagram.jpg" alt="">
+                            </div>
+                        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="primary center">Contact us</h1>
+        <div id="contact-box">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name ">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" name="name" id="email" placeholder="Enter your Email">
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age: </label>
+                    <input type="age" name="name" id="age" placeholder="Enter your Age">
+                </div>
+
+                <div class="form-group">
+                    <label for="Phone number">Phone no: </label>
+                    <input type="phone no" name="name" id="phone no" placeholder="Enter your Phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="Massage">Massage: </label>
+                    <textarea name="Massage" id="Massage" cols="30" rows="10">Massage</textarea>
+                    
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.myOnlineFood.com 2023
+            
+        </div>
+    </footer>
+</body>
+
+</html>
